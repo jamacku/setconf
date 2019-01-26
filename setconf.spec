@@ -28,9 +28,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %license COPYING
 %doc README.md
-%dir /usr/lib/%{name}/
+%dir %{_libdir}/%{name}/
 %{_bindir}/%{name}
-/usr/lib/%{name}/%{name}.py*
+%{_libdir}/%{name}/%{name}.py*
 
 %changelog
 * Tue Jan 22 2019 Jan Macku <jamacku@redhat.com> - 0.7.5-1 
