@@ -28,9 +28,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %license COPYING
 %doc README.md
-%dir %{_libdir}/%{name}/
+%{python3_sitelib}/%{name}-*.egg-info/
+%{python3_sitelib}/%{name}/
 %{_bindir}/%{name}
-%{_libdir}/%{name}/%{name}.py*
 
 %changelog
 * Tue Jan 22 2019 Jan Macku <jamacku@redhat.com> - 0.7.5-1 
