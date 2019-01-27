@@ -19,7 +19,8 @@ Setconf is small utility that can be used for changing settings in configuration
 
 %build
 %py3_build
-python -m compileall %{name}.py
+python setup.py build && python setup.py install
+# python -m compileall %{name}.py
 
 %install
 %py3_install
