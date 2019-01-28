@@ -19,12 +19,9 @@ Setconf is small utility that can be used for changing settings in configuration
 
 %build
 %py3_build
-python setup.py build && python setup.py install
-# python -m compileall %{name}.py
 
 %install
 %py3_install
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %license COPYING
