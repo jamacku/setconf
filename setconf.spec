@@ -5,7 +5,7 @@ Summary:        Small utility that can be used for changing settings in configur
 
 License:        GPLv2
 URL:            http://setconf.roboticoverlords.org/ 
-Source0:        http://setconf.roboticoverlords.org/%{name}-%{version}.tar.xz
+Source0:        https://github.com/xyproto/%{name}/archive/%{version}.tar.gz
 
 BuildRequires:  python3-devel
 
@@ -15,7 +15,7 @@ BuildArch:      noarch
 Setconf is small utility that can be used for changing settings in configuration textfiles. It has no dependencies except the built-in Python modules. 
 
 %prep
-%autosetup
+%autosetup -n %{name}-%{version}
 
 %build
 %py3_build
@@ -23,11 +23,10 @@ Setconf is small utility that can be used for changing settings in configuration
 %install
 %py3_install
 
-%files
+%files -n %{name}
 %license COPYING
 %doc README.md
-%{python3_sitelib}/%{name}-*.egg-info/
-%{python3_sitelib}/%{name}/
+%{python3_sitelib}/*
 %{_bindir}/%{name}
 
 %changelog
