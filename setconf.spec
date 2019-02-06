@@ -5,7 +5,7 @@ Summary:        Utility for changing settings in configuration text files
 
 License:        GPLv2
 URL:            http://setconf.roboticoverlords.org/ 
-Source0:        https://github.com/xyproto/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        https://github.com/xyproto/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source1:        https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt 
 
 Patch0:         %{name}-%{version}-rm_sb.patch
