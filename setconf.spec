@@ -6,7 +6,6 @@ Summary:        Utility for changing settings in configuration text files
 License:        GPLv2
 URL:            http://setconf.roboticoverlords.org/ 
 Source0:        https://github.com/xyproto/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
-Source1:        https://www.gnu.org/licenses/old-licenses/gpl-2.0.txt 
 
 Patch0:         %{name}-%{version}-rm_sb.patch
 
@@ -21,13 +20,14 @@ changing settings in configuration text files.
 
 %prep
 %autosetup -n %{name}-%{version}
-install -m0644 -p %{SOURCE1} COPYING
 
 %build
 %py3_build
 
 %check
 %{__python3} setconf.py --test
+sed 's/^..\/setconf.py/%{__python3} &/' testcases/test.sh >testcases/test.sh
+./testcases/test.sh
 
 %install
 %py3_install
