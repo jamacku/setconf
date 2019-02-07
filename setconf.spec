@@ -26,7 +26,7 @@ changing settings in configuration text files.
 
 %check
 %{__python3} setconf.py --test
-sed 's/^..\/setconf.py/%{__python3} &/' testcases/test.sh >testcases/test.sh
+awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/test.sh >testcases/test.sh
 ./testcases/test.sh
 
 %install
