@@ -38,6 +38,7 @@ awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/t
 %{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
 %{python3_sitelib}/%{name}.py
 %{python3_sitelib}/__pycache__/%{name}.*.pyc
+%{_mandir}/man1/%{name}.1*
 %{_bindir}/%{name}
 
 %changelog
