@@ -20,6 +20,11 @@ changing settings in configuration text files.
 
 %prep
 %autosetup -n %{name}-%{version}
+ls
+mkdir -p %{buildroot}%{_mandir}/man1/
+ls -R %{buildroot}
+install -m0644 -p %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
+ls -R %{buildroot}
 
 %build
 %py3_build
@@ -38,7 +43,7 @@ awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/t
 %{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
 %{python3_sitelib}/%{name}.py
 %{python3_sitelib}/__pycache__/%{name}.*.pyc
-%{_mandir}/man1/%{name}.1*
+%{_mandir}/man1/%{name}.1
 %{_bindir}/%{name}
 
 %changelog
