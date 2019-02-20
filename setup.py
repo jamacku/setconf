@@ -12,7 +12,7 @@ setup(name="setconf",
       author_email="xyproto@archlinux.org",
       license="GPLv2",
       py_modules=["setconf"],
-      data_files = [('man/man1', ['./setconf.1'])],
+      data_files = [('share/man/man1', ['./setconf.1'])],
       entry_points={
         "console_scripts" : [
             "setconf = setconf:main",
