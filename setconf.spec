@@ -8,6 +8,7 @@ URL:            http://setconf.roboticoverlords.org/
 Source0:        https://github.com/xyproto/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 
 Patch0:         %{name}-%{version}-rm_sb.patch
+Patch1:         %{name}-%{version}-add_man.patch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-setuptools
@@ -20,11 +21,6 @@ changing settings in configuration text files.
 
 %prep
 %autosetup -n %{name}-%{version}
-ls
-mkdir -p %{buildroot}%{_mandir}/man1/
-ls -R %{buildroot}
-install -m0644 -p %{name}.1 %{buildroot}%{_mandir}/man1/%{name}.1
-ls -R %{buildroot}
 
 %build
 %py3_build
