@@ -44,5 +44,5 @@ cd testcases/ && ./py3_test.sh
 %{_bindir}/%{name}
 
 %changelog
-* Wed Feb 6 2019 Jan Macku <jamacku@redhat.com> - 0.7.5-1 
+* Wed Feb 27 2019 Jan Macku <jamacku@redhat.com> - 0.7.6-1 
 - Init setconf package  
