@@ -1,5 +1,5 @@
 Name:           setconf
-Version:        0.7.5 
+Version:        0.7.6 
 Release:        1%{?dist}
 Summary:        Utility for changing settings in configuration text files 
 
@@ -27,8 +27,9 @@ changing settings in configuration text files.
 
 %check
 %{__python3} setconf.py --test
-awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/test.sh >testcases/test.sh
-./testcases/test.sh
+awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/test.sh >testcases/py3_test.sh
+chmod a+x testcases/py3_test.sh
+cd testcases/ && ./py3_test.sh
 
 %install
 %py3_install
@@ -39,7 +40,7 @@ awk '/^..\/setconf.py/ { print "%{__python3} " $0; next } { print }' testcases/t
 %{python3_sitelib}/%{name}-%{version}-py%{python3_version}.egg-info/
 %{python3_sitelib}/%{name}.py
 %{python3_sitelib}/__pycache__/%{name}.*.pyc
-%{_mandir}/man1/%{name}.1
+%{_mandir}/man1/%{name}.1*
 %{_bindir}/%{name}
 
 %changelog
